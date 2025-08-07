@@ -1,0 +1,46 @@
+🔧 Final Specification for cvehunter
+You’re building a CLI-based Go tool that:
+
+Searches public GitHub repositories for CVE exploits and by default list the latest 20 cves  with name and description only
+
+Extracts metadata like CVE ID, description, tags (e.g., RCE, XSS), severity, date, language
+
+Supports multiple filters (tag, language, severity, date)
+
+Can save results to file
+
+Optional: GitHub token support, live preview, offline cache, etc.
+
+
+Features You Asked For (Reconfirmed)
+Feature	Status	Notes
+--cve lookup	✅	Done
+--tags filtering	✅ (not -tag)	You typed -tag — actual is --tags
+--lang filtering	✅	Done
+--severity filter	✅	Done
+--after / --before date filter	⚠️ Not implemented yet	You used --after, not added yet
+--outfile to save results	✅	Done
+--max results per CVE	✅	Done
+--sort (stars / updated)	✅	Done
+--verbose	✅	Done
+Interactive / Silent mode	❌ Not yet	Optional
+Nuclei template link	✅	Included in final
+GitHub token support	❌ Not yet	Optional
+
+
+output style
+
+[CVE-2025-12345] Apache Struts RCE Vulnerability
+  ➤ Severity   : CRITICAL
+  ➤ Published  : 2025-08-06
+  ➤ Language   : Java
+  ➤ Tags       : RCE, Remote
+  ➤ Description: Remote Code Execution via crafted headers in Apache Struts
+
+  ➤ Exploits:
+    • https://github.com/xyz/struts-rce-poc
+    • https://github.com/pentestsec/cve-2025-12345
+    • https://nvd.nist.gov/vuln/detail/CVE-2025-12345
+    • https://raw.githubusercontent.com/projectdiscovery/nuclei-templates/main/cves/2025/CVE-2025-12345.yaml
+
+────────────────────────────────────────────────────────────
